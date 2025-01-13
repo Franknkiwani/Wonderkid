@@ -1,0 +1,262 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modern Icons Section</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00aaff, #0044cc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            background-color: black;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .balance {
+            background-color: #b5ff60;
+            color: black;
+            padding: 3px 10px;
+            font-size: 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .toggle {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .close-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #444;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Ad Billboard Styles */
+        .ad-billboard {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #0099ff, #003366);
+            border-top: 4px solid black;
+            border-bottom: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .ad-title {
+            font-size: 1rem;
+            color: black;
+        }
+
+        .ad-description {
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        .ad-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 90%;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .ad-button:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* Icon Section Styles */
+        .icon-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Adjusted icon container to make icons fill the circle */
+        .icon {
+            width: 70px;
+            height: 70px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: white;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the container */
+        }
+
+        .icon-text {
+            font-size: 0.9rem;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="toggle">☰</button>
+        <div class="balance">BALANCE: $0.000</div>
+    </header>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1>MAKE MONEY</h1>
+            <button class="close-button" id="close-btn">Close</button>
+        </div>
+        <a href="#">Home</a>
+        <a href="#">Balance</a>
+        <a href="#">Settings</a>
+        <a href="#">Log Out</a>
+    </div>
+
+    <!-- Ad Billboard -->
+    <div class="ad-billboard">
+        <div class="ad-title" id="ad-title">Ad 1: Exclusive Deal!</div>
+        <div class="ad-description" id="ad-description">Get 50% off on all products. Don't miss out!</div>
+        <button class="ad-button" id="ad-button">Learn More</button>
+    </div>
+
+    <!-- Icon Section -->
+    <div class="icon-section">
+        <!-- REMOVE ADS Icon -->
+        <div class="icon-container">
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcHzFzkq9zzMSrQKaR9scEc2w6uMbOlyQ8-6FH7cker74dgD_JiCLELEQ&s=10" alt="Remove Ads">
+            </div>
+            <div class="icon-text">REMOVE ADS</div>
+        </div>
+        
+        <!-- REFER & EARN Icon -->
+        <div class="icon-container">
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvNQECMEm5TFaAsf0IiF6IUa6MK1k2SBhZxgo1o3mbFdnQIzqAe6dCB5M&s=10" alt="Refer & Earn">
+            </div>
+            <div class="icon-text">REFER & EARN</div>
+        </div>
+
+        <!-- ADD ANY Icon -->
+        <div class="icon-container">
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvNQECMEm5TFaAsf0IiF6IUa6MK1k2SBhZxgo1o3mbFdnQIzqAe6dCB5M&s=10" alt="Add Any">
+            </div>
+            <div class="icon-text">ADD ANY</div>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.querySelector('.toggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeButton = document.getElementById('close-btn');
+
+        // Sidebar functionality
+        toggleButton.addEventListener('click', () => {
+            sidebar.style.left = '0';
+        });
+
+        closeButton.addEventListener('click', () => {
+            sidebar.style.left = '-250px';
+        });
+    </script>
+</body>
+</html>
